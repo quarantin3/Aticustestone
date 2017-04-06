@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Aticustestone</string>
+    <string name="white">white</string>
+    <string name="atcolor">atcolor</string>
+    <string-array name="field_option">
+        <item name="choice">Pick Field of Law</item>
+        <item name="adoption">Adoption</item>
+        <item name="Banking">Banking &amp; Insurance</item>
+        <item name="Business">Business &amp; Commercial</item>
+        <item name="Constitution">Law Procedure</item>
+        <item name="Consumer">Consumer Law</item>
+        <item name="Corporate">Corporate</item>
+        <item name="Criminal">Criminal</item>
+        <item name="Divorce">Divorce</item>
+        <item name="Enviroment">Enviroment</item>
+        <item name="Government">Government Policies</item>
+        <item name="Inheritance">Inheritance</item>
+        <item name="Labour">Labour Law</item>
+        <item name="Marriage">Marriage</item>
+        <item name="Personal">Personal</item>
+        <item name="Property">Property</item>
+        <item name="Realestate">Real Estate</item>
+
+    </string-array>
+
+    <string-array name="location">
+        <item name="Select Location">Select Location</item>
+        <item name="Delhi">New Delhi</item>
+        <item name="Mumbai">Mumbai</item>
+    </string-array>
+
+    <string name="textinside">Text</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="chatbtn">Chat</string>
+    <string name="callbtn">Calls</string>
+    <string name="active">Active</string>
+    <string name="aboutbtn">About Atticus</string>
+    <string name="title_activity_lawyerlist_nav">LawyerlistNav</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_primary_nav">PrimaryNav</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

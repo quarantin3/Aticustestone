@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1041292313543",
+    "firebase_url": "https://aticustestone.firebaseio.com",
+    "project_id": "aticustestone",
+    "storage_bucket": "aticustestone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1041292313543:android:5f904e2a62393a70",
+        "android_client_info": {
+          "package_name": "com.example.hp_pc.aticustestone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1041292313543-sa8ojjkdrfjo6ngniubcjcba1q3tpord.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp_pc.aticustestone",
+            "certificate_hash": "541502DDE1156BAE9C3CEE945AF3F7EDC91CA51A"
+          }
+        },
+        {
+          "client_id": "1041292313543-9utgqn327lgrab0bq18g0icg4uh16v2j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmnt8Wl0ZjNjUs46y82LetfRw-Fs-qHx4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1041292313543-9utgqn327lgrab0bq18g0icg4uh16v2j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
