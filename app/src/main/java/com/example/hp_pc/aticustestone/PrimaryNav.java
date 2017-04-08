@@ -77,6 +77,7 @@ public class PrimaryNav extends AppCompatActivity
 
 
 
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -156,6 +157,10 @@ public class PrimaryNav extends AppCompatActivity
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, LawyerlistFragment.newInstance(), "Frag2");
             fragmentTransaction.commit();
+
+        } else if (id == R.id.faq) {
+
+        } else if (id == R.id.chatus){
 
         } else if (id == R.id.nav_share) {
 

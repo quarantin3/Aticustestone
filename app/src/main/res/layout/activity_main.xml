@@ -30,8 +30,8 @@
 
     <include
         android:id="@+id/toolbarsearch"
-        layout="@layout/toolbar"
-        />
+        layout="@layout/toolbar"/>
+
 
         <Spinner
         android:layout_width="match_parent"
@@ -124,7 +124,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/radiocall"
-        android:onClick="onRadioButtonClicked"/>
+        />
 
     <RadioButton
         android:text="chat"
@@ -133,7 +133,7 @@
         android:layout_marginLeft="20dp"
         android:id="@+id/radiochat"
         android:layout_toRightOf="@id/radiocall"
-        android:onClick="onRadioButtonClicked"/>
+        />
 
     <RadioButton
         android:text="Both"
@@ -142,8 +142,7 @@
         android:layout_marginLeft="20dp"
         android:id="@+id/radioboth"
         android:layout_toRightOf="@id/radiochat"
-        android:onClick="onRadioButtonClicked"
-        android:checked="true"/>
+         />
 
 </RadioGroup>
 

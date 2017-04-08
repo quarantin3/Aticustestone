@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
     private Button signinbutton;
     private TextView registerlinktext;
 
+    private static final String URL_LOGIN_DEVICE = "http://ec2-35-154-56-217.ap-south-1.compute.amazonaws.com/gcm_chat/v1/index.php/user/login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +46,9 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
         signinbutton.setOnClickListener(this);
         registerlinktext.setOnClickListener(this);
 
+
     }
+
 
     private void loginUser() {
         final ProgressDialog progressDialog = new ProgressDialog(this);
@@ -62,14 +65,20 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
             return;
         }
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.URL_LOGIN ,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_LOGIN_DEVICE ,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
+
                         progressDialog.dismiss();
                         try {
                             JSONObject obj = new JSONObject(response);
-                            Toast.makeText(LoginActivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
+                            if(obj.getString("error")=="false") {
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }else if (obj.getString("error")=="true"){
+                                Toast.makeText(LoginActivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

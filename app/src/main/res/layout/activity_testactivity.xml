@@ -8,28 +8,79 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/silver"
     tools:context="com.example.hp_pc.aticustestone.Testactivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="25dp">
+
+    <ImageView
+        android:id="@+id/logologin"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/logottenspar"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logologin"
+        android:id="@+id/appNamelogin"
+        android:text="Atticus"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily=""
+        android:textSize="20dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Register"
+        android:id="@+id/textView"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal" />
+
     <EditText
-        android:layout_above="@+id/registerpass"
-        android:hint="Enter email"
+        android:layout_marginTop="100dp"
+        android:layout_margin="15dp"
+        android:hint="Enter your Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:layout_above="@+id/buttonRegister"
-        android:hint="Enter Password"
+        android:layout_margin="15dp"
+        android:hint="Enter your password"
         android:id="@+id/registerpass"
+        android:inputType="textPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 
     <Button
-        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Register"
+        android:background="@color/atcolor"
         android:id="@+id/buttonRegister"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/loginlink"
+        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:text="Or Login Here"/>
+
+
+
+   </LinearLayout>
 
 </RelativeLayout>

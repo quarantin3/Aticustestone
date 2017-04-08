@@ -12,7 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -56,11 +56,41 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         toolbarser.setTitle("Atticus");
         setSupportActionBar(toolbarser);
 
+        RadioGroup rgg = (RadioGroup) findViewById(R.id.Radiorexgroup);
+        rgg.check(R.id.radioboth);
+        comm = "both";
+        rgg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.radiocall:
+                        comm = "call";
+                        break;
+                    case R.id.radiochat:
+                        comm = "chat";
+                        break;
+                    case R.id.radioboth:
+                        comm = "both";
+                        break;
+                }
+            }
+        });
+
+
+
+
 
 
         mContext = this;
         btn = (Button) findViewById(R.id.gobtn);
         btn.setOnClickListener(this);
+
+
+        String chklog = SharedPrefManager.getInstance(this).getDeviceEmail();
+        if(chklog==null){
+            startActivity(new Intent(this, Testactivity.class));
+        }
+
 
 
         boomMenuButton = (BoomMenuButton) findViewById(R.id.boom);
@@ -75,22 +105,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             switch (index) {
                                 case 0:
                                     Intent i = new Intent(getApplicationContext(), PrimaryNav.class);
-                                    i.putExtra("frgToLoad", 0);
+                                    i.putExtra("frgToLoad", 0);//dashboard fragment reffer primaryNav.class
                                     startActivity(i);
                                     break;
                                 case 1:
                                     Intent l = new Intent(getApplicationContext(), PrimaryNav.class);
-                                    l.putExtra("frgToLoad", 5);
+                                    l.putExtra("frgToLoad", 5);//chatsapp fragment
                                     startActivity(l);
                                     break;
                                 case 2:
                                     Intent j = new Intent(getApplicationContext(), PrimaryNav.class);
-                                    j.putExtra("frgToLoad", 2);
+                                    j.putExtra("frgToLoad", 2); //lawyerlistfragment
                                     startActivity(j);
                                     break;
                                 case 3:
-                                    Intent k = new Intent(getApplicationContext(), Testactivity.class);
-                                    //k.putExtra("frgToLoad", 3);
+                                    Intent k = new Intent(getApplicationContext(), Aboutatticus.class);
+                                    //k.putExtra("frgToLoad", 3);//directs to About Atticus page
                                     startActivity(k);
                                     break;
                             }
@@ -204,7 +234,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 }
 
-        private void initViews() {
+
+    private void initViews() {
 
         }
 
@@ -227,28 +258,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
-    public void onRadioButtonClicked(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.radiocall:
-                if(checked){
-                    comm = "call";
-                }
-                break;
-            case R.id.radiochat:
-                if(checked){
-                    comm = "chat";
-                }
-                break;
-            case R.id.radioboth:
-                if(checked){
-                    comm = "both";
-                    Toast.makeText(this, comm, Toast.LENGTH_SHORT).show();
-                }
-                break;
-        }
-        return;
-    }
+//    public void onRadioButtonClicked(View view) {
+//        boolean checked = ((RadioButton) view).isChecked();
+//        switch (view.getId()) {
+//            case R.id.radiocall:
+//                if(checked){
+//                    comm = "call";
+//                }
+//                break;
+//            case R.id.radiochat:
+//                if(checked){
+//                    comm = "chat";
+//                }
+//                break;
+//            case R.id.radioboth:
+//                if(checked){
+//                    comm = "both";
+//                    Toast.makeText(this, comm, Toast.LENGTH_SHORT).show();
+//                }
+//                break;
+//        }
+//        return;
+//    }
 
 
 
@@ -279,6 +310,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 
+
+
     public void storeComm(String commm) {
         SharedPrefManager.getInstance(getApplicationContext()).saveComm(commm);
     }
@@ -286,6 +319,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void storeSearchField(int field) {
         SharedPrefManager.getInstance(getApplicationContext()).saveSearchfield(field);
     }
+
 
 
 

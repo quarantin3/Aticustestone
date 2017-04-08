@@ -2,6 +2,8 @@
     <string name="app_name">Aticustestone</string>
     <string name="white">white</string>
     <string name="atcolor">atcolor</string>
+    <string name="truete">true</string>
+    <string name="falsefe">false</string>
     <string-array name="field_option">
         <item name="choice">Pick Field of Law</item>
         <item name="adoption">Adoption</item>

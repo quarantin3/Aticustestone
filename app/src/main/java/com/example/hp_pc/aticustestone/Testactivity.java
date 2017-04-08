@@ -1,11 +1,13 @@
 package com.example.hp_pc.aticustestone;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -29,6 +31,7 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextEmail;
     private EditText editTextPass;
     private ProgressDialog progressDialog;
+    private TextView loginLink;
 
     //URL to registerdevice
     private static final String URL_REGISTER_DEVICE = "http://ec2-35-154-56-217.ap-south-1.compute.amazonaws.com/gcm_chat/v1/index.php/user/register";
@@ -42,11 +45,16 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPass = (EditText) findViewById(R.id.registerpass);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        loginLink = (TextView) findViewById(R.id.loginlink);
 
         //adding listener to view
         buttonRegister.setOnClickListener(this);
+        loginLink.setOnClickListener(this);
     }
 
+    public void storeLogin(String logchk) {
+        SharedPrefManager.getInstance(getApplicationContext()).setloginbool(logchk);
+    }
     //storing token to mysql server
     private void sendTokenToServer() {
         progressDialog = new ProgressDialog(this);
@@ -102,6 +110,10 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view == buttonRegister) {
             sendTokenToServer();
+            startActivity(new Intent(this, MainActivity.class));
+        }
+        else if(view == loginLink) {
+            startActivity(new Intent(this, LoginActivity.class));
         }
     }
 }

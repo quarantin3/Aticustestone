@@ -18,6 +18,14 @@
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Active Search" />
+        <item
+            android:id="@+id/faq"
+            android:icon="@drawable/ic_faq_icon"
+            android:title="FAQ's" />
+        <item
+            android:id="@+id/chatus"
+            android:icon="@drawable/ic_support"
+            android:title="Support" />
     </group>
 
     <item android:title="Communicate">

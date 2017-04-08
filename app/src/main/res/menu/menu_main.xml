@@ -5,15 +5,6 @@
     >
 
     <item
-        android:id="@+id/logobar"
-        android:orderInCategory="80"
-        android:icon="@drawable/logottenspar"
-        app:showAsAction="always"
-        android:title="Atticus">
-
-    </item>
-
-    <item
         android:id="@+id/action_search"
         android:orderInCategory="100"
         android:title="Search"

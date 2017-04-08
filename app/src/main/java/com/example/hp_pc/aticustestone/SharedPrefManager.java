@@ -16,6 +16,8 @@ public class SharedPrefManager {
     private static final String TAG_EMAIL = "tagemail";
     private static final String TAG_SEARCH = "tagsearch";
     private static final String TAG_COMM = "commmethod";
+    private static final String IS_LOGIN = "IsloggedIn";
+    private static final String KEY_EMAIL = "email";
 
     private static SharedPrefManager mInstance;
     private static Context mCtx;
@@ -29,6 +31,22 @@ public class SharedPrefManager {
             mInstance = new SharedPrefManager(context);
         }
         return mInstance;
+    }
+
+
+    public boolean setloginbool(String login){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(IS_LOGIN, login);
+        editor.apply();
+        return true;
+    }
+
+
+    //this method will fetch the device token from shared preferences
+    public String getloginbool(){
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return  sharedPreferences.getString(IS_LOGIN, null);
     }
 
     //this method will save the device token to shared preferences
@@ -49,6 +67,9 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return  sharedPreferences.getString(TAG_TOKEN, null);
     }
+
+
+
 
 
     //save the email address
