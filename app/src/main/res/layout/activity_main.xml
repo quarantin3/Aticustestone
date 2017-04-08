@@ -6,29 +6,32 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/grey"
     tools:context="com.example.hp_pc.aticustestone.MainActivity">
 
 
 
-        <ImageView
-                android:id="@+id/dish_image"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/logottenspar"
-            android:layout_centerHorizontal="true" />
+        <!--<ImageView-->
+            <!--android:id="@+id/dish_image"-->
+            <!--android:layout_width="70dp"-->
+            <!--android:layout_height="70dp"-->
+            <!--android:layout_marginTop="30dp"-->
+            <!--android:background="@drawable/logottenspar"-->
+            <!--android:layout_centerHorizontal="true" />-->
 
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/dish_image"
-        android:id="@+id/appName"
-        android:text="Atticus"
-        android:textSize="20sp"
-        android:layout_centerHorizontal="true"
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@id/dish_image"-->
+        <!--android:id="@+id/appName"-->
+        <!--android:text="Atticus"-->
+        <!--android:textSize="20sp"-->
+        <!--android:layout_centerHorizontal="true" />-->
+
+    <include
+        android:id="@+id/toolbarsearch"
+        layout="@layout/toolbar"
         />
-
 
         <Spinner
         android:layout_width="match_parent"
@@ -36,7 +39,7 @@
         android:layout_marginTop="23dp"
         android:id="@+id/spinner"
         android:spinnerMode="dropdown"
-        android:layout_below="@id/appName"
+            android:layout_below="@id/toolbarsearch"
         android:layout_centerHorizontal="true"
         android:background="@android:drawable/btn_dropdown"
         android:layout_marginEnd="15dp"
@@ -47,10 +50,62 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Jurisdiction"
+        android:layout_below="@id/spinner"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:id="@+id/jurisdiction_text"
+        android:layout_alignStart="@id/spinner"/>
+
+    <CheckBox
+        android:text="Session Courts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:id="@+id/session"
+        android:layout_below="@id/jurisdiction_text"
+        android:layout_marginTop="15dp"
+        android:checked="true"/>
+
+    <CheckBox
+        android:text="District Courts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/district"
+        android:layout_weight="0.18"
+        android:layout_below="@id/jurisdiction_text"
+        android:layout_toRightOf="@id/session" />
+
+    <CheckBox
+        android:text="High Courts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/high"
+        android:layout_below="@id/session"
+        android:layout_alignStart="@id/session"
+        android:layout_marginTop="30dp"
+        />
+
+    <CheckBox
+        android:text="Supreme Court"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:id="@+id/supreme"
+        android:layout_toRightOf="@id/high"
+        android:layout_below="@id/district"
+        android:layout_alignStart="@id/district"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/commmod"
         android:text="Preffered Mode of Communication"
         android:textAlignment="center"
-        android:layout_below="@+id/spinner"
+        android:layout_below="@+id/spinnercourts2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp" />
 
@@ -87,30 +142,24 @@
         android:layout_marginLeft="20dp"
         android:id="@+id/radioboth"
         android:layout_toRightOf="@id/radiochat"
-        android:onClick="onRadioButtonClicked"/>
+        android:onClick="onRadioButtonClicked"
+        android:checked="true"/>
 
 </RadioGroup>
 
-    <CheckBox
-        android:text="For Arbitration/Courts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:id="@+id/checkBoxcourts"
-        android:layout_below="@id/Radiorexgroup"
-        android:layout_marginTop="30dp"
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="23dp"
+        android:id="@+id/spinnercourts2"
+        android:spinnerMode="dropdown"
+        android:layout_below="@id/high"
         android:layout_centerHorizontal="true"
-        android:onClick="onCheckboxClicked"/>
-
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Go"
-        android:id="@+id/gobtn"
-        android:background="@color/atcolor"
-        android:layout_below="@id/checkBoxcourts"
-        android:layout_centerHorizontal="true"/>
+        android:background="@android:drawable/btn_dropdown"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="15dp" />
 
     <com.nightonke.boommenu.BoomMenuButton
         android:id="@+id/boom"
@@ -122,9 +171,18 @@
         android:layout_margin="20dp"
 
         app:bmb_piecePlaceEnum="piecePlace_dot_4_1"
-        app:bmb_buttonPlaceEnum="buttonPlace_sc_4_1"
+        app:bmb_buttonPlaceEnum="buttonPlace_sc_4_1" />
 
-        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go"
+        android:id="@+id/gobtn"
+
+        android:background="@color/atcolor"
+        android:layout_below="@+id/Radiorexgroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
 
 </RelativeLayout>
 

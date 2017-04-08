@@ -1,20 +1,276 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.hp_pc.aticustestone.DashboardFragment">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_height="192dp"
+        android:layout_width="match_parent">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:toolbarId="@+id/toolbar"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            app:layout_scrollInterpolator="@android:anim/decelerate_interpolator"
+            app:contentScrim="?attr/colorPrimary">
+
+            <ImageView
+                android:id="@+id/app_bar_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/lawyer"
+                android:scaleType="centerCrop" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbardash"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:visibility="invisible"
+                ></android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+
+
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/grey"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Test123"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.hp_pc.aticustestone.DashboardFragment">
 
-</RelativeLayout>
+            <!-- TODO: Update blank fragment layout -->
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginStart="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="5dp"
+                android:id="@+id/cardtop"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recent"
+                    android:textSize="25sp"
+                    android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:layout_width="85dp"
+                android:layout_height="90dp"
+
+                card_view:cardCornerRadius="8dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardElevation="20dp"
+                android:clickable="true"
+                android:id="@+id/chtact"
+                android:layout_marginStart="5dp"
+
+                android:layout_below="@id/cardtop"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_chat"
+                        android:id="@+id/imageView"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imageView"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"
+                        android:text="Active Chat"
+                        android:textColor="@color/cardview_dark_background"
+                         />
+
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="85dp"
+                android:layout_height="90dp"
+
+                card_view:cardCornerRadius="8dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardElevation="20dp"
+                android:clickable="true"
+                android:id="@+id/historyprev"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/chtact"
+                android:layout_marginStart="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_access_time_black_24dp"
+                        android:id="@+id/imageViewhistory"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imageViewhistory"
+                        android:layout_marginStart="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"
+                        android:text="Hystory"
+                        android:textColor="@color/cardview_dark_background"
+                        />
+
+
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="85dp"
+                android:layout_height="90dp"
+
+                card_view:cardCornerRadius="8dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardElevation="20dp"
+                android:clickable="true"
+                android:id="@+id/completed"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/historyprev"
+                android:layout_marginStart="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_access_time_black_24dp"
+                        android:id="@+id/imagecompleted"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imagecompleted"
+                        android:layout_marginStart="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:textSize="13sp"
+                        android:text="Completed Consults"
+                        android:textColor="@color/cardview_dark_background" />
+
+
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="85dp"
+                android:layout_height="90dp"
+
+                card_view:cardCornerRadius="8dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardElevation="20dp"
+                android:clickable="true"
+                android:id="@+id/searchcard"
+                android:layout_alignParentBottom="true"
+                android:layout_toEndOf="@+id/completed"
+                android:layout_marginStart="6dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+                    <ImageView
+                        android:layout_width="55dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_search_black_24dp"
+                        android:id="@+id/imagesearchlaw"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/imagesearchlaw"
+                        android:layout_marginStart="35dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:textSize="14sp"
+                        android:text="Search Lawyers"
+                        android:textColor="@color/cardview_dark_background" />
+
+
+
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>

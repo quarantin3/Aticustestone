@@ -36,7 +36,8 @@
             android:label="@string/title_activity_primary_nav"
             android:theme="@style/AppTheme" />
         <activity android:name=".Chatmenu" />
-        <activity android:name=".Testactivity"></activity>
+        <activity android:name=".Testactivity" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>

@@ -51,9 +51,9 @@ public class LawyerlistFragment extends Fragment {
 
     private void searchLawyer(final String law, final String commtry) {
 
-        //String url = "https://ec2.xynocast.com/gcm_chat/v1/index.php/user/search";
+        String url = "https://ec2.xynocast.com/gcm_chat/v1/index.php/user/search";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.URL_SEARCHLAW,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -93,7 +93,7 @@ public class LawyerlistFragment extends Fragment {
 
 //                                   Toast.makeText(MainActivity.this, testlaw.get("User_Id" + ""), Toast.LENGTH_LONG).show();
                                 }
-                               Log.d("val", lawyerlist.get(1) + "");
+                               //Log.d("val", lawyerlist.get(1) + "");
 
                                 recyclerView.setAdapter(new LawyerAdapterRecycler(getActivity(), lawyerlist));
 //                                adapter.notifyDataSetChanged();
