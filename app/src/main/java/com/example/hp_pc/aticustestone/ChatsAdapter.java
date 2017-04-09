@@ -29,12 +29,12 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> 
         }
     }
 
-    int userid;
+    String userid;
     List<Chat_POJO> messages = new ArrayList<>();
     Context context;
-    int SELF = 1111;
+    String SELF = Endpoints.self_userid;
 
-    public ChatsAdapter(Context context, List<Chat_POJO> messages, int userid){
+    public ChatsAdapter(Context context, List<Chat_POJO> messages, String userid){
         this.userid = userid;
         this.messages = messages;
         this.context = context;
@@ -44,7 +44,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> 
     public int getItemViewType(int position){
         Chat_POJO msg_temp = messages.get(position);
         if (msg_temp.getUserId() == userid)
-            return SELF;
+            return 1;
         else
             return position;
     }
@@ -54,7 +54,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> 
         View itemView;
         ViewHolder vh;
 
-        if (viewType == SELF) {
+        if (viewType == 1) {
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.msg_self, parent, false);
             vh = new ViewHolder(parent.getContext(), itemView);
         }

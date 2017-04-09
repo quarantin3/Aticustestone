@@ -26,4 +26,7 @@ public class Endpoints {
     // fetch msgs from userid
     public static final String URL_FETCH_MSGS = "https://ec2.xynocast.com/gcm_chat/v1/index.php/fetch/chats";
 
+    //self userid
+    public static final String self_userid = "103";
+
 }

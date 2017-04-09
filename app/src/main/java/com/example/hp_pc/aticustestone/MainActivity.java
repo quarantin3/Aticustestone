@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ButtonBarLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -60,7 +61,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         boomMenuButton = (BoomMenuButton) findViewById(R.id.boom);
         boomMenuButton.setButtonEnum(ButtonEnum.TextInsideCircle);
 
-
+        Button btn = (Button)findViewById(R.id.testbtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ChatsActivity.class);
+                startActivity(i);
+            }
+        });
 
 
         for (int i = 0; i < boomMenuButton.getPiecePlaceEnum().pieceNumber(); i++) {

@@ -6,16 +6,16 @@ package com.example.hp_pc.aticustestone;
 
 public class Chat_POJO {
 
-    int userid;
+    String userid;
     String msg, name;
 
-    public  Chat_POJO(int userid, String msg, String name){
+    public  Chat_POJO(String userid, String msg, String name){
         this.userid = userid;
         this.msg = msg;
         this.name = name;
     }
 
-    public int getUserId(){
+    public String getUserId(){
         return userid;
     }
 
