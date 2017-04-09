@@ -1,16 +1,28 @@
 package com.example.hp_pc.aticustestone;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ChatsActivity extends AppCompatActivity {
 
@@ -30,6 +42,9 @@ public class ChatsActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setHasFixedSize(true);
 
+        Button btn = (Button)findViewById(R.id.buttonSend);
+        final EditText editText = (EditText)findViewById(R.id.editTextMessage);
+
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             String jsonstring = extras.getString("json");
@@ -41,6 +56,14 @@ public class ChatsActivity extends AppCompatActivity {
             }
         }
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String str = editText.getText().toString();
+                sendmsg(str);
+
+            }
+        });
 
     }
 
@@ -64,5 +87,53 @@ public class ChatsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void sendmsg(final String message){
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.URL_SEND_MESSAGE,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Log.d("POST : ", response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.d("POST ERROR", error.toString());
+                    }
+                })
+        {
+            @Override
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("email", "85");
+                params.put("title", "title");
+                params.put("message", message);
+
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
+    }
+
+    public void fetch_messages(){
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.URL_FETCH_MSGS,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                            try {
+                                JSONObject jsonObject = new JSONObject(response);
+
+
+
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                    }
+                });
     }
 }
