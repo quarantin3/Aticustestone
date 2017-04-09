@@ -6,7 +6,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.FirebaseInstanceIdService;
 
 /**
- * This is to generate a token tor ecieve notifications or communicate with firebase Messaging Cloud
+ * This is to generate a token to recieve notifications or communicate with firebase Messaging Cloud
  * Created by Hp-PC on 1/23/2017.
  */
 

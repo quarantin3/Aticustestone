@@ -59,7 +59,7 @@ public class LawyerlistFragment extends Fragment {
                     public void onResponse(String response) {
                         try {
                             JSONObject obj = new JSONObject(response);
-                            if(obj.getBoolean("error") == false) {
+                            if(obj.getBoolean("error")) {
 
 
                                 JSONArray lawyers = obj.getJSONArray("lawyers");
@@ -89,7 +89,7 @@ public class LawyerlistFragment extends Fragment {
 
 
                                     lawyerlist.add(i, testlaw);
-                                    Log.d("testlaw" , testlaw + "");
+                                    //Log.d("testlaw" , testlaw + "");
 
 //                                   Toast.makeText(MainActivity.this, testlaw.get("User_Id" + ""), Toast.LENGTH_LONG).show();
                                 }
@@ -97,10 +97,6 @@ public class LawyerlistFragment extends Fragment {
 
                                 recyclerView.setAdapter(new LawyerAdapterRecycler(getActivity(), lawyerlist));
 //                                adapter.notifyDataSetChanged();
-
-
-
-
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
