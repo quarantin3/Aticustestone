@@ -35,8 +35,18 @@
             android:name=".PrimaryNav"
             android:label="@string/title_activity_primary_nav"
             android:theme="@style/AppTheme" />
+<<<<<<< HEAD
         <activity android:name=".Testactivity" />
         <activity android:name=".ChatsActivity"></activity>
+=======
+        <activity android:name=".Chatmenu" />
+<<<<<<< Updated upstream
+        <activity android:name=".Testactivity"></activity>
+=======
+        <activity android:name=".Testactivity" />
+        <activity android:name=".Main2Activity" />
+>>>>>>> Stashed changes
+>>>>>>> chatactivity send
     </application>
 
 </manifest>

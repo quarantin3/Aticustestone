@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         btn = (Button) findViewById(R.id.gobtn);
         btn.setOnClickListener(this);
 
+<<<<<<< HEAD
 
         String chklog = SharedPrefManager.getInstance(this).getDeviceEmail();
         if(chklog==null){
@@ -106,6 +107,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 startActivity(i);
             }
         });
+=======
+
+        String chklog = SharedPrefManager.getInstance(this).getDeviceEmail();
+        if(chklog==null){
+            startActivity(new Intent(this, Testactivity.class));
+        }
+
+>>>>>>> chatactivity send
+
+
+        boomMenuButton = (BoomMenuButton) findViewById(R.id.boom);
+        boomMenuButton.setButtonEnum(ButtonEnum.TextInsideCircle);
 
 
         for (int i = 0; i < boomMenuButton.getPiecePlaceEnum().pieceNumber(); i++) {
@@ -204,8 +217,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 }
             }
 
-
-
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
@@ -242,7 +253,41 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         });
 
+        adapterc = ArrayAdapter.createFromResource(this, R.array.location, android.R.layout.simple_spinner_dropdown_item);
+        spinnercourts = (Spinner) findViewById(R.id.spinnercourts2);
+        spinnercourts.setAdapter(adapterc);
+        spinnercourts.setPrompt("Enter Location");
+        spinnercourts.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+                spinnvalcourts = (String) parent.getItemAtPosition(position);
+                switch (spinnvalcourts) {
+                    case "New Delhi":
+                        testrloc = 1;
+                        Toast.makeText(getBaseContext(), String.valueOf(lawchoice), Toast.LENGTH_LONG).show();
+                        break;
+                    case "Mumbai":
+                        testrloc = 2;
+                        Toast.makeText(getBaseContext(), String.valueOf(lawchoice), Toast.LENGTH_LONG).show();
+                        break;
 
+
+<<<<<<< HEAD
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+
+
+        });
+
+=======
+>>>>>>> chatactivity send
+
+}
 
 
 }

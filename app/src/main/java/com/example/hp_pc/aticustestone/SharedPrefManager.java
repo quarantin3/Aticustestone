@@ -71,6 +71,7 @@ public class SharedPrefManager {
     }
 
 
+<<<<<<< HEAD
     public boolean savetoSend(String lawid) {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -98,6 +99,10 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(TAG_USERID, null);
     }
+=======
+
+
+>>>>>>> chatactivity send
 
     //save the email address
     public boolean saveEmail(String email) {

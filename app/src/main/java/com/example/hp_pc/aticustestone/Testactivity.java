@@ -45,7 +45,11 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPass = (EditText) findViewById(R.id.registerpass);
         buttonRegister = (Button) findViewById(R.id.buttonRegister);
+<<<<<<< HEAD
         loginLink = (TextView) findViewById(R.id.loginlink);
+=======
+        loginLink = (TextView) findViewById(R.id.loginLink);
+>>>>>>> chatactivity send
 
         //adding listener to view
         buttonRegister.setOnClickListener(this);
@@ -112,6 +116,7 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
         requestQueue.add(stringRequest);
     }
 
+<<<<<<< HEAD
     public void storeEmail(String email) {
         SharedPrefManager.getInstance(getApplicationContext()).saveEmail(email);
     }
@@ -120,6 +125,8 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
         SharedPrefManager.getInstance(getApplicationContext()).saveUserid(userid);
     }
 
+=======
+>>>>>>> chatactivity send
     @Override
     public void onClick(View view) {
         if (view == buttonRegister) {
