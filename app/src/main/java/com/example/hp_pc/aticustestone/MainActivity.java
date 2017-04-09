@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private BoomMenuButton boomMenuInActionBar;
     private BoomMenuButton boomInfo;
 
-    private Toolbar toolbarser;
+
 
     private Context mContext;
     private View mCustomView;
@@ -52,9 +52,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbarser = (Toolbar) findViewById(R.id.toolbarsearch);
-        toolbarser.setTitle("Atticus");
+        Toolbar toolbarser = (Toolbar) findViewById(R.id.toolbarone);
+       // toolbarser.setTitle("Atticus");
         setSupportActionBar(toolbarser);
+        getSupportActionBar().setTitle("Atticus");
+        getSupportActionBar().setIcon(R.drawable.ic_logosize);
 
         RadioGroup rgg = (RadioGroup) findViewById(R.id.Radiorexgroup);
         rgg.check(R.id.radioboth);

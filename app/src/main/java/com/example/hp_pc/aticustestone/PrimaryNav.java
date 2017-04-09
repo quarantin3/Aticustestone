@@ -71,9 +71,10 @@ public class PrimaryNav extends AppCompatActivity
         }
 
         toolbar = (Toolbar) findViewById(R.id.toolbarone);
-        toolbar.setTitle("Atticus");
+        //toolbar.setTitle("Atticus");
         setSupportActionBar(toolbar);
-
+        getSupportActionBar().setTitle("Atticus");
+        getSupportActionBar().setIcon(R.drawable.ic_logosize);
 
 
 

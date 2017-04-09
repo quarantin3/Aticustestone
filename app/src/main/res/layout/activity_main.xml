@@ -9,7 +9,18 @@
     android:background="@color/grey"
     tools:context="com.example.hp_pc.aticustestone.MainActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/searchappbar">
 
+        <include
+            android:id="@+id/toolbarone"
+            layout="@layout/toolbar"
+            />
+
+    </android.support.design.widget.AppBarLayout>
 
         <!--<ImageView-->
             <!--android:id="@+id/dish_image"-->
@@ -28,9 +39,7 @@
         <!--android:textSize="20sp"-->
         <!--android:layout_centerHorizontal="true" />-->
 
-    <include
-        android:id="@+id/toolbarsearch"
-        layout="@layout/toolbar"/>
+
 
 
         <Spinner
@@ -39,7 +48,7 @@
         android:layout_marginTop="23dp"
         android:id="@+id/spinner"
         android:spinnerMode="dropdown"
-            android:layout_below="@id/toolbarsearch"
+        android:layout_below="@id/searchappbar"
         android:layout_centerHorizontal="true"
         android:background="@android:drawable/btn_dropdown"
         android:layout_marginEnd="15dp"
