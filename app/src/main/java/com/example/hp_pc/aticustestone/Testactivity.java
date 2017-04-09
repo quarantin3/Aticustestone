@@ -78,7 +78,12 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
                         progressDialog.dismiss();
                         try {
                             JSONObject obj = new JSONObject(response);
-                            Toast.makeText(Testactivity.this, obj.getString("message"), Toast.LENGTH_LONG).show();
+                            if(obj.getString("error")=="false") {
+                                storeEmail(editTextEmail.getText().toString().trim());
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            }else if (obj.getString("error")=="true"){
+                                Toast.makeText(Testactivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -106,6 +111,9 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
         requestQueue.add(stringRequest);
     }
 
+    public void storeEmail(String email) {
+        SharedPrefManager.getInstance(getApplicationContext()).saveEmail(email);
+    }
 
     @Override
     public void onClick(View view) {

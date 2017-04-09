@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
                         try {
                             JSONObject obj = new JSONObject(response);
                             if(obj.getString("error")=="false") {
+                                storeEmail(enteremaillogin.getText().toString().trim());
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }else if (obj.getString("error")=="true"){
                                 Toast.makeText(LoginActivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
@@ -113,7 +114,7 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if(v==signinbutton ) {
-            storeEmail(enteremaillogin.getText().toString().trim());
+
             loginUser();
         } else if (v==registerlinktext) {
             startActivity(new Intent(this, Testactivity.class));

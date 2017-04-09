@@ -192,14 +192,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp" />
 
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/gobtn"
-        android:layout_alignEnd="@+id/gobtn"
-        android:layout_marginTop="28dp"
-        android:id="@+id/testbtn" />
-
 </RelativeLayout>
 

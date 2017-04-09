@@ -34,12 +34,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     }
 
-    private void test(JSONObject json) {
-        Log.d("in", "in");
-        Intent i = new Intent(MyFirebaseMessagingService.this, ChatsActivity.class);
-        i.putExtra("json", json.toString());
-        startActivity(i);
-    }
+//    private void test(JSONObject json) {
+//        Log.d("in", "in");
+//        Intent i = new Intent(MyFirebaseMessagingService.this, ChatsActivity.class);
+//        i.putExtra("json", json.toString());
+//        startActivity(i);
+//    }
 
     //this method will display the notification
     //We are passing the JSONObject that is received from
@@ -60,7 +60,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             MyNotificationManager mNotificationManager = new MyNotificationManager(getApplicationContext());
 
             //creating an intent for the notification
-            Intent intent = new Intent(getApplicationContext(), ChatsActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
             //if there is no image
             if (imageUrl.equals("null")) {

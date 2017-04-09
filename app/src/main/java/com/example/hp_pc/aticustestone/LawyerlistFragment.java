@@ -59,7 +59,7 @@ public class LawyerlistFragment extends Fragment {
                     public void onResponse(String response) {
                         try {
                             JSONObject obj = new JSONObject(response);
-                            if(obj.getBoolean("error")) {
+                            if(obj.getBoolean("error") == false) {
 
 
                                 JSONArray lawyers = obj.getJSONArray("lawyers");
