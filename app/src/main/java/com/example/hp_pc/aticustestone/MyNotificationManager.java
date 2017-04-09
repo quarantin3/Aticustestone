@@ -7,8 +7,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.text.Html;
+import android.util.Log;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -33,7 +38,9 @@ public class MyNotificationManager {
     //the method will show a big notification with an image
     //parameters are title for message title, message for message text, url of the big image and an intent that will open
     //when you will tap on the notification
-    public void showBigNotification(String title, String message, String url, Intent intent) {
+    public void showBigNotification(String title, String message, String url, Intent intent, JSONObject jsonObject) {
+
+        intent.putExtra("json", jsonObject.toString());
         PendingIntent resultPendingIntent =
                 PendingIntent.getActivity(
                         mCtx,
@@ -66,7 +73,10 @@ public class MyNotificationManager {
     //the method will show a small notification
     //parameters are title for message title, message for message text and an intent that will open
     //when you will tap on the notification
-    public void showSmallNotification(String title, String message, Intent intent) {
+    public void showSmallNotification(String title, String message, Intent intent, JSONObject jsonObject) {
+
+        Log.d("PAY JSON", jsonObject.toString());
+        intent.putExtra("json", jsonObject.toString());
         PendingIntent resultPendingIntent =
                 PendingIntent.getActivity(
                         mCtx,

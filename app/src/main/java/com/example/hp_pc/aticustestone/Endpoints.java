@@ -19,8 +19,14 @@ public class Endpoints {
     public static final String URL_LAWDETAILS = BASE_URL + "/user/lawyer/details";
 
 
-// sending the notification message
+    // sending the notification message
     public static final String URL_SEND_MESSAGE = "https://ec2.xynocast.com/atticus/include/sendSinglePush.php";
     public static final String URL_SEND_MULTIPLE_SEND = "https://ec2.xynocast.com/atticus/include/sendMultiplePush.php";
+
+    // fetch msgs from userid
+    public static final String URL_FETCH_MSGS = "https://ec2.xynocast.com/gcm_chat/v1/index.php/fetch/chats";
+
+    //self userid
+    public static final String self_userid = "103";
 
 }
