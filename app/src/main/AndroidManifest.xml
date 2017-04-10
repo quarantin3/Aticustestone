@@ -36,6 +36,7 @@
             android:label="@string/title_activity_primary_nav"
             android:theme="@style/AppTheme" />
         <activity android:name=".Testactivity" />
+        <activity android:name=".ChatsActivity"></activity>
     </application>
 
 </manifest>

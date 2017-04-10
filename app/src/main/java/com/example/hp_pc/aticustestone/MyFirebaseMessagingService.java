@@ -24,6 +24,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             Log.d(TAG, "Data Payload: " + remoteMessage.getData().toString());
             try {
                 JSONObject json = new JSONObject(remoteMessage.getData().toString());
+                JSONObject testdat = json.getJSONObject("data");
+                String Sender = testdat.getString("sender");
+                storeUser(Sender);
                 sendPushNotification(json);
 //                test(json);
 
@@ -34,12 +37,17 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     }
 
-//    private void test(JSONObject json) {
-//        Log.d("in", "in");
-//        Intent i = new Intent(MyFirebaseMessagingService.this, ChatsActivity.class);
-//        i.putExtra("json", json.toString());
-//        startActivity(i);
-//    }
+    public void storeUser(String lawid) {
+        SharedPrefManager.getInstance(getApplicationContext()).savetoSend(lawid);
+    }
+
+
+    private void test(JSONObject json) {
+        Log.d("in", "in");
+        Intent i = new Intent(MyFirebaseMessagingService.this, ChatsActivity.class);
+        i.putExtra("json", json.toString());
+        startActivity(i);
+    }
 
     //this method will display the notification
     //We are passing the JSONObject that is received from
@@ -55,12 +63,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             String title = data.getString("title");
             String message = data.getString("message");
             String imageUrl = data.getString("image");
+            String sender = data.getString("sender");
+            storeUser(sender);
 
             //creating MyNotificationManager object
             MyNotificationManager mNotificationManager = new MyNotificationManager(getApplicationContext());
 
             //creating an intent for the notification
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ChatsActivity.class);
 
             //if there is no image
             if (imageUrl.equals("null")) {

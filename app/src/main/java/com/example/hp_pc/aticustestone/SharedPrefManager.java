@@ -13,6 +13,8 @@ public class SharedPrefManager {
 
     private static final String SHARED_PREF_NAME = "FCMSharedPref";
     private static final String TAG_TOKEN = "tagtoken";
+    private static final String TAG_USERID = "userid";
+    private static final String TAG_LAW_ID = "lawid";
     private static final String TAG_EMAIL = "tagemail";
     private static final String TAG_SEARCH = "tagsearch";
     private static final String TAG_COMM = "commmethod";
@@ -69,8 +71,33 @@ public class SharedPrefManager {
     }
 
 
+    public boolean savetoSend(String lawid) {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TAG_LAW_ID, lawid);
+        editor.apply();
+        return true;
+    }
 
+    //return the device email
+    public String gettoSend() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(TAG_LAW_ID, null);
+    }
 
+    public boolean saveUserid(String userid) {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(TAG_USERID, userid);
+        editor.apply();
+        return true;
+    }
+
+    //return the device email
+    public String getDeviceuserid() {
+        SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(TAG_USERID, null);
+    }
 
     //save the email address
     public boolean saveEmail(String email) {

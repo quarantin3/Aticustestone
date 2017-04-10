@@ -80,6 +80,7 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
                             JSONObject obj = new JSONObject(response);
                             if(obj.getString("error")=="false") {
                                 storeEmail(editTextEmail.getText().toString().trim());
+                                storeUser(obj.getJSONObject("user").getString("user_id"));
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }else if (obj.getString("error")=="true"){
                                 Toast.makeText(Testactivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
@@ -113,6 +114,10 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
 
     public void storeEmail(String email) {
         SharedPrefManager.getInstance(getApplicationContext()).saveEmail(email);
+    }
+
+    public void storeUser(String userid) {
+        SharedPrefManager.getInstance(getApplicationContext()).saveUserid(userid);
     }
 
     @Override

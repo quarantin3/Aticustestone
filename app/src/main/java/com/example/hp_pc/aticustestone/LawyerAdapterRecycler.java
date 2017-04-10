@@ -165,13 +165,20 @@ public class LawyerAdapterRecycler extends RecyclerView.Adapter<LawyerAdapterRec
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
-            Intent k = new Intent(this.ctx, PrimaryNav.class);
-            k.putExtra("frgToLoad", 4);
+            HashMap<String,String> tempMap;
+            tempMap = prime.get(position);
+            String temp = tempMap.get("User_Id");
+            storeUser(temp);
+            Intent k = new Intent(this.ctx, ChatsActivity.class);
             this.ctx.startActivity(k);
-
-
-
+//            Intent k = new Intent(this.ctx, PrimaryNav.class);
+//            k.putExtra("frgToLoad", 4);
+//            this.ctx.startActivity(k);
         }
+    }
+
+    public void storeUser(String lawid) {
+        SharedPrefManager.getInstance(ctx).savetoSend(lawid);
     }
 
 

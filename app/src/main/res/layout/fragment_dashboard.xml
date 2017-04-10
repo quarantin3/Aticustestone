@@ -79,7 +79,7 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
-                card_view:cardElevation="20dp"
+                card_view:cardElevation="2dp"
                 android:clickable="true"
                 android:id="@+id/chtact"
                 android:layout_marginStart="5dp"
@@ -130,7 +130,7 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
-                card_view:cardElevation="20dp"
+                card_view:cardElevation="2dp"
                 android:clickable="true"
                 android:id="@+id/historyprev"
                 android:layout_alignParentBottom="true"
@@ -179,7 +179,7 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
-                card_view:cardElevation="20dp"
+                card_view:cardElevation="2dp"
                 android:clickable="true"
                 android:id="@+id/completed"
                 android:layout_alignParentBottom="true"
@@ -227,7 +227,7 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
-                card_view:cardElevation="20dp"
+                card_view:cardElevation="2dp"
                 android:clickable="true"
                 android:id="@+id/searchcard"
                 android:layout_alignParentBottom="true"

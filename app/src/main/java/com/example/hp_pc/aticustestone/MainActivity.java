@@ -98,6 +98,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         boomMenuButton = (BoomMenuButton) findViewById(R.id.boom);
         boomMenuButton.setButtonEnum(ButtonEnum.TextInsideCircle);
 
+        Button btn = (Button)findViewById(R.id.testbtn);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, ChatsActivity.class);
+                startActivity(i);
+            }
+        });
+
 
         for (int i = 0; i < boomMenuButton.getPiecePlaceEnum().pieceNumber(); i++) {
             boomMenuButton.addBuilder(BuilderManager.getTextInsideCircleButtonBuilder()
