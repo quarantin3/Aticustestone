@@ -31,15 +31,23 @@
             android:layout_marginTop="16dp"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
+<<<<<<< Updated upstream
         card_view:contentPadding="4dp"
 =======
+=======
+        card_view:contentPadding="4dp"/>
+>>>>>>> Stashed changes
         <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
         android:scaleY="0.5"
         android:scaleX="0.5"
+<<<<<<< Updated upstream
         android:layout_below="@id/textView3"
+=======
+        android:layout_below="@+id/textView3"
+>>>>>>> Stashed changes
         android:layout_centerHorizontal="true"
         />
 
@@ -50,7 +58,10 @@
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         card_view:contentPadding="1dp"
+<<<<<<< Updated upstream
 >>>>>>> chatactivity send
+=======
+>>>>>>> Stashed changes
         card_view:cardElevation="10dp"
         android:layout_below="@+id/ratingBar"
         android:id="@+id/cardView">
@@ -67,11 +78,14 @@
                 android:src="@drawable/ic_creds_bio"
                 android:id="@+id/imgcredbio"/>
 
+<<<<<<< Updated upstream
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/ic_creds_bio"
                 android:id="@+id/imgcredbio"/>
+=======
+>>>>>>> Stashed changes
 
             <TextView
                 android:layout_width="wrap_content"
@@ -122,12 +136,16 @@
 
             </TableLayout>
 
+<<<<<<< Updated upstream
 =======
                 android:text="Supreme court...(More Specifics)"
                 android:id="@+id/textView5"
                 android:layout_below="@id/imgcredbio"
                 android:layout_marginStart="4dp"/>
 >>>>>>> chatactivity send
+=======
+
+>>>>>>> Stashed changes
         </RelativeLayout>
 
 
@@ -135,6 +153,7 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         android:layout_height="wrap_content"
         android:elevation="3dp"
@@ -143,13 +162,18 @@
         android:layout_marginLeft="8dp"
         card_view:contentPadding="4dp"
 =======
+=======
+>>>>>>> Stashed changes
         android:layout_height="200dp"
         android:elevation="10dp"
         android:layout_marginTop="6dp"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         card_view:contentPadding="1dp"
+<<<<<<< Updated upstream
 >>>>>>> chatactivity send
+=======
+>>>>>>> Stashed changes
         card_view:cardElevation="10dp"
         android:layout_below="@+id/cardView"
 
@@ -220,7 +244,6 @@
 
 
     </android.support.v7.widget.CardView>
-
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="400dp"
@@ -292,8 +315,34 @@
 
 <<<<<<< HEAD
             </TableLayout>
+            </RelativeLayout>
 
+    </android.support.v7.widget.CardView>
 
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:elevation="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            card_view:contentPadding="1dp"
+            card_view:cardElevation="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/cardView2"
+            android:id="@+id/cardViewbioEducation2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_educationbio"
+                android:id="@+id/imgedubio"/>
+
+<<<<<<< Updated upstream
 =======
     </android.support.v7.widget.CardView>
 
@@ -320,6 +369,8 @@
                 android:src="@drawable/ic_educationbio"
                 android:id="@+id/imgedubio"/>
 
+=======
+>>>>>>> Stashed changes
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -336,7 +387,10 @@
                 android:id="@+id/textView77"
                 android:layout_below="@id/imgedubio"
                 android:layout_marginStart="4dp"/>
+<<<<<<< Updated upstream
 >>>>>>> chatactivity send
+=======
+>>>>>>> Stashed changes
         </RelativeLayout>
         </android.support.v7.widget.CardView>
 

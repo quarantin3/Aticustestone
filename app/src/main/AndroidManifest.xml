@@ -35,6 +35,7 @@
             android:name=".PrimaryNav"
             android:label="@string/title_activity_primary_nav"
             android:theme="@style/AppTheme" />
+<<<<<<< Updated upstream
 <<<<<<< HEAD
         <activity android:name=".Testactivity" />
         <activity android:name=".ChatsActivity"></activity>
@@ -47,6 +48,12 @@
         <activity android:name=".Main2Activity" />
 >>>>>>> Stashed changes
 >>>>>>> chatactivity send
+=======
+
+        <activity android:name=".Testactivity"/>
+        <activity android:name=".Main2Activity" />
+
+>>>>>>> Stashed changes
     </application>
 
 </manifest>

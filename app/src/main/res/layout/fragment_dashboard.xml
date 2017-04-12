@@ -79,11 +79,15 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 card_view:cardElevation="2dp"
 =======
                 card_view:cardElevation="20dp"
 >>>>>>> chatactivity send
+=======
+                card_view:cardElevation="20dp"
+>>>>>>> Stashed changes
                 android:clickable="true"
                 android:id="@+id/chtact"
                 android:layout_marginStart="5dp"
@@ -134,11 +138,15 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 card_view:cardElevation="2dp"
 =======
                 card_view:cardElevation="20dp"
 >>>>>>> chatactivity send
+=======
+                card_view:cardElevation="20dp"
+>>>>>>> Stashed changes
                 android:clickable="true"
                 android:id="@+id/historyprev"
                 android:layout_alignParentBottom="true"
@@ -187,11 +195,15 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 card_view:cardElevation="2dp"
 =======
                 card_view:cardElevation="20dp"
 >>>>>>> chatactivity send
+=======
+                card_view:cardElevation="20dp"
+>>>>>>> Stashed changes
                 android:clickable="true"
                 android:id="@+id/completed"
                 android:layout_alignParentBottom="true"
@@ -239,11 +251,15 @@
 
                 card_view:cardCornerRadius="8dp"
                 card_view:cardBackgroundColor="@color/white"
+<<<<<<< Updated upstream
 <<<<<<< HEAD
                 card_view:cardElevation="2dp"
 =======
                 card_view:cardElevation="20dp"
 >>>>>>> chatactivity send
+=======
+                card_view:cardElevation="20dp"
+>>>>>>> Stashed changes
                 android:clickable="true"
                 android:id="@+id/searchcard"
                 android:layout_alignParentBottom="true"

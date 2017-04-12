@@ -104,6 +104,7 @@ public class SharedPrefManager {
 
 >>>>>>> chatactivity send
 
+
     //save the email address
     public boolean saveEmail(String email) {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
