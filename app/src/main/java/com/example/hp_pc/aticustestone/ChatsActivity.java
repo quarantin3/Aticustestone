@@ -35,7 +35,6 @@ public class ChatsActivity extends AppCompatActivity {
     RecyclerView rv;
 
     String to_userid;
-            //SharedPrefManager.getInstance(this).gettoSend();
     String selfid;
 
     @Override
@@ -267,6 +266,6 @@ public class ChatsActivity extends AppCompatActivity {
         };
 
         RequestQueue requestQueue2 = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest2);
+        requestQueue2.add(stringRequest2);
     }
 }
