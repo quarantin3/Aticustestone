@@ -36,6 +36,12 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'junit:junit:4.12'
     compile 'com.mcxiaoke.volley:library-aar:1.0.1'
+    compile 'io.saeid:fab-loading:1.0.0'
+    compile 'com.github.tibolte:elasticdownload:1.0.4'
+    compile 'com.github.florent37:materialtextfield:1.0.7'
+    compile 'com.github.fenjuly:ToggleExpandLayout:774e497692'
+    compile 'com.kyleduo.switchbutton:library:1.2.9'
+    compile 'com.github.zzz40500:AndroidSweetSheet:1.1.0'
 }
 
 

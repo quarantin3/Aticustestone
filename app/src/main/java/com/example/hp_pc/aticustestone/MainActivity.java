@@ -58,6 +58,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         getSupportActionBar().setTitle("Atticus");
         getSupportActionBar().setIcon(R.drawable.ic_logosize);
 
+        final CheckBox session = (CheckBox) findViewById(R.id.district);
+
+
         RadioGroup rgg = (RadioGroup) findViewById(R.id.Radiorexgroup);
         rgg.check(R.id.radioboth);
         comm = "both";
@@ -98,14 +101,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         boomMenuButton = (BoomMenuButton) findViewById(R.id.boom);
         boomMenuButton.setButtonEnum(ButtonEnum.TextInsideCircle);
 
-        Button btn = (Button)findViewById(R.id.testbtn);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, ChatsActivity.class);
-                startActivity(i);
-            }
-        });
+//        Button btn = (Button)findViewById(R.id.testbtn);
+//        btn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainActivity.this, ChatsActivity.class);
+//                startActivity(i);
+//            }
+//        });
 
 
         for (int i = 0; i < boomMenuButton.getPiecePlaceEnum().pieceNumber(); i++) {
@@ -130,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                                     startActivity(j);
                                     break;
                                 case 3:
-                                    Intent k = new Intent(getApplicationContext(), Aboutatticus.class);
+                                    Intent k = new Intent(getApplicationContext(), ChatsActivity.class);
                                     //k.putExtra("frgToLoad", 3);//directs to About Atticus page
                                     startActivity(k);
                                     break;
@@ -243,8 +246,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         });
 
 
-
-
 }
 
 
@@ -299,9 +300,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onCheckboxClicked(View view){
         boolean checked = ((CheckBox) view).isChecked();
 
-        if(view.getId()==R.id.high) {
+        if(view.getId()==R.id.district) {
             if (checked) {
-                courts = true;
+
             }
             else {
                 courts = false;

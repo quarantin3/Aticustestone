@@ -3,10 +3,11 @@ package com.example.hp_pc.aticustestone;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,11 +28,12 @@ import java.util.Map;
 public class Testactivity extends AppCompatActivity implements View.OnClickListener {
 
     //defining views
-    private Button buttonRegister;
+    private ImageView buttonRegister;
     private EditText editTextEmail;
     private EditText editTextPass;
     private ProgressDialog progressDialog;
     private TextView loginLink;
+    FloatingActionButton fabdone;
 
     //URL to registerdevice
     private static final String URL_REGISTER_DEVICE = "http://ec2-35-154-56-217.ap-south-1.compute.amazonaws.com/gcm_chat/v1/index.php/user/register";
@@ -44,11 +46,11 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
         ///getting views from xml
         editTextEmail = (EditText) findViewById(R.id.editTextEmail);
         editTextPass = (EditText) findViewById(R.id.registerpass);
-        buttonRegister = (Button) findViewById(R.id.buttonRegister);
+        fabdone = (FloatingActionButton) findViewById(R.id.signup);
         loginLink = (TextView) findViewById(R.id.loginlink);
 
         //adding listener to view
-        buttonRegister.setOnClickListener(this);
+        fabdone.setOnClickListener(this);
         loginLink.setOnClickListener(this);
     }
 
@@ -122,7 +124,7 @@ public class Testactivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if (view == buttonRegister) {
+        if (view == fabdone) {
             sendTokenToServer();
             startActivity(new Intent(this, MainActivity.class));
         }

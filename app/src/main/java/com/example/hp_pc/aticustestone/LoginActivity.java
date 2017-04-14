@@ -3,6 +3,7 @@ package com.example.hp_pc.aticustestone;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -28,7 +29,8 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
 
     private EditText enteremaillogin;
     private EditText enterpasslogin;
-    private Button signinbutton;
+    private Button registerlink;
+    private FloatingActionButton fabtwo;
     private TextView registerlinktext;
 
     private static final String URL_LOGIN_DEVICE = "http://ec2-35-154-56-217.ap-south-1.compute.amazonaws.com/gcm_chat/v1/index.php/user/login";
@@ -40,11 +42,13 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
 
         enteremaillogin = (EditText) findViewById(R.id.editTextlogin);
         enterpasslogin = (EditText) findViewById(R.id.edittextPass);
-        signinbutton = (Button) findViewById(R.id.buttonlogin);
-        registerlinktext = (TextView) findViewById(R.id.registerlink);
+        fabtwo = (FloatingActionButton) findViewById(R.id.login);
+        //registerlinktext = (TextView) findViewById(R.id.registerlink);
+        registerlink = (Button) findViewById(R.id.signuplink);
 
-        signinbutton.setOnClickListener(this);
-        registerlinktext.setOnClickListener(this);
+        fabtwo.setOnClickListener(this);
+        //registerlinktext.setOnClickListener(this);
+        registerlink.setOnClickListener(this);
 
 
     }
@@ -113,10 +117,10 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        if(v==signinbutton ) {
+        if(v==fabtwo ) {
 
             loginUser();
-        } else if (v==registerlinktext) {
+        } else if (v==registerlink) {
             startActivity(new Intent(this, Testactivity.class));
         }
 
