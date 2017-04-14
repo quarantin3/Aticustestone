@@ -33,6 +33,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             } catch (Exception e) {
                 Log.d(TAG, "Exception: " + e.getMessage());
             }
+
+            Intent broadcast = new Intent();
+            broadcast.setAction("open_chats_activity");
+            sendBroadcast(broadcast);
         }
 
     }

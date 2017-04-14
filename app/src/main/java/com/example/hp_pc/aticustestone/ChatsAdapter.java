@@ -47,7 +47,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> 
     public int getItemViewType(int position){
         Chat_POJO msg_temp = messages.get(position);
         if (msg_temp.getUserId() == userid)
-            return 1;
+            return -123;
         else
             return position;
     }
@@ -57,7 +57,7 @@ public class ChatsAdapter extends RecyclerView.Adapter<ChatsAdapter.ViewHolder> 
         View itemView;
         ViewHolder vh;
 
-        if (viewType == 1) {
+        if (viewType == -123) {
             itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.msg_self, parent, false);
             vh = new ViewHolder(parent.getContext(), itemView);
         }
