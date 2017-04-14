@@ -16,10 +16,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-<<<<<<< HEAD
 import org.json.JSONArray;
-=======
->>>>>>> chatactivity send
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,13 +34,9 @@ public class ChatsActivity extends AppCompatActivity {
 
     RecyclerView rv;
 
-<<<<<<< HEAD
     String to_userid;
             //SharedPrefManager.getInstance(this).gettoSend();
     String selfid;
-=======
-    int to_userid = 86;
->>>>>>> chatactivity send
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +47,6 @@ public class ChatsActivity extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setHasFixedSize(true);
 
-<<<<<<< HEAD
         selfid = SharedPrefManager.getInstance(this).getDeviceuserid();
         to_userid = SharedPrefManager.getInstance(this).gettoSend();
 
@@ -63,21 +55,12 @@ public class ChatsActivity extends AppCompatActivity {
 
         fetch_messages(false);
 
-=======
-        Button btn = (Button)findViewById(R.id.buttonSend);
-        final EditText editText = (EditText)findViewById(R.id.editTextMessage);
-
->>>>>>> chatactivity send
         Bundle extras = getIntent().getExtras();
         if (extras != null){
             String jsonstring = extras.getString("json");
             try {
                 jsonOb = new JSONObject(jsonstring);
-<<<<<<< HEAD
                 //parse(jsonOb);
-=======
-                parse(jsonOb);
->>>>>>> chatactivity send
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -94,7 +77,6 @@ public class ChatsActivity extends AppCompatActivity {
 
     }
 
-<<<<<<< HEAD
     public void parse(String response, boolean update, int self_or_rec){
 
         //1 for self 2 for rec
@@ -191,42 +173,14 @@ public class ChatsActivity extends AppCompatActivity {
     }
 
 
-=======
-    public void parse(JSONObject json){
-        JSONObject jsonObject = json;
-
-        Log.d("JSON : chats", jsonObject.toString() + "");
-
-        try {
-            JSONObject msg = jsonObject.getJSONObject("data");
-
-            String str = msg.getString("message");
-            messages.add(new Chat_POJO(123, str, "test"));
-
-            adapter = new ChatsAdapter(this, messages, 1196);
-            adapter.notifyDataSetChanged();
-            rv.setAdapter(adapter);
-
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-    }
-
->>>>>>> chatactivity send
     public void sendmsg(final String message){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.URL_SEND_MESSAGE,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-<<<<<<< HEAD
                         fetch_messages(true);
                         Log.d("test", response);
-=======
-                        Log.d("POST : ", response);
->>>>>>> chatactivity send
                     }
                 },
                 new Response.ErrorListener() {
@@ -240,13 +194,8 @@ public class ChatsActivity extends AppCompatActivity {
             protected Map<String, String> getParams(){
                 Map<String, String> params = new HashMap<>();
 
-<<<<<<< HEAD
                 params.put("userid", to_userid);
                 params.put("sender", selfid);
-=======
-                params.put("sender", "85");
-                params.put("userid", to_userid + "");
->>>>>>> chatactivity send
                 params.put("title", "title");
                 params.put("message", message);
 
@@ -257,7 +206,6 @@ public class ChatsActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-<<<<<<< HEAD
     public void fetch_messages(final boolean update){
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://ec2.xynocast.com/gcm_chat/v1/index.php/fetch/chats",
                 new Response.Listener<String>() {
@@ -322,22 +270,3 @@ public class ChatsActivity extends AppCompatActivity {
         requestQueue.add(stringRequest2);
     }
 }
-=======
-    public void fetch_messages(){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Endpoints.URL_FETCH_MSGS,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-
-
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                    }
-                });
-    }
-}
->>>>>>> chatactivity send

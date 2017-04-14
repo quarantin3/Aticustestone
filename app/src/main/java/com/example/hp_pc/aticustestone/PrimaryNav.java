@@ -1,10 +1,6 @@
 package com.example.hp_pc.aticustestone;
 
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
-import android.support.design.widget.FloatingActionButton;
->>>>>>> chatactivity send
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -13,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 public class PrimaryNav extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,10 +72,6 @@ public class PrimaryNav extends AppCompatActivity
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Atticus");
         getSupportActionBar().setIcon(R.drawable.ic_logosize);
-<<<<<<< HEAD
-=======
-
->>>>>>> chatactivity send
 
 
 
