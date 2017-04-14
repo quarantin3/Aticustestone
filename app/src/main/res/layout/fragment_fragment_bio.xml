@@ -23,6 +23,7 @@
         android:src="@color/white"
         />
 
+<<<<<<< HEAD
         <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,6 +32,25 @@
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         card_view:contentPadding="4dp"
+=======
+        <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:scaleY="0.5"
+        android:scaleX="0.5"
+        android:layout_below="@id/textView3"
+        android:layout_centerHorizontal="true"
+        />
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:elevation="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        card_view:contentPadding="1dp"
+>>>>>>> chatactivity send
         card_view:cardElevation="10dp"
         android:layout_below="@+id/ratingBar"
         android:id="@+id/cardView">
@@ -40,6 +60,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_marginTop="1dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_creds_bio"
+                android:id="@+id/imgcredbio"/>
 
             <ImageView
                 android:layout_width="20dp"
@@ -59,6 +85,7 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:layout_below="@id/imgcredbio"
                 android:layout_marginStart="11dp"
                 android:layout_marginTop="10dp">
@@ -95,6 +122,12 @@
 
             </TableLayout>
 
+=======
+                android:text="Supreme court...(More Specifics)"
+                android:id="@+id/textView5"
+                android:layout_below="@id/imgcredbio"
+                android:layout_marginStart="4dp"/>
+>>>>>>> chatactivity send
         </RelativeLayout>
 
 
@@ -102,12 +135,21 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
+<<<<<<< HEAD
         android:layout_height="wrap_content"
         android:elevation="3dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
         card_view:contentPadding="4dp"
+=======
+        android:layout_height="200dp"
+        android:elevation="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        card_view:contentPadding="1dp"
+>>>>>>> chatactivity send
         card_view:cardElevation="10dp"
         android:layout_below="@+id/cardView"
 
@@ -126,10 +168,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+<<<<<<< HEAD
                 android:layout_toEndOf="@id/imgedubioor"
                 android:text="My Education"
                 android:layout_marginTop="3dp"
                 android:id="@+id/credtitle22"
+=======
+                android:text="Reviews by clients"
+>>>>>>> chatactivity send
                 android:textColor="#F000"/>
 
         <TableLayout
@@ -244,9 +290,53 @@
                         />
                 </TableRow>
 
+<<<<<<< HEAD
             </TableLayout>
 
 
+=======
+    </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:elevation="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            card_view:contentPadding="1dp"
+            card_view:cardElevation="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/cardView2"
+            android:id="@+id/cardViewbioEducation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_educationbio"
+                android:id="@+id/imgedubio"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/imgedubio"
+                android:text="My Education"
+                android:layout_marginTop="3dp"
+                android:id="@+id/edutitle"
+                android:textColor="#F000"/>
+
+            <TextView
+                android:layout_width="292dp"
+                android:layout_height="wrap_content"
+                android:text="College a, College b"
+                android:id="@+id/textView77"
+                android:layout_below="@id/imgedubio"
+                android:layout_marginStart="4dp"/>
+>>>>>>> chatactivity send
         </RelativeLayout>
         </android.support.v7.widget.CardView>
 
@@ -278,6 +368,7 @@
             android:id="@+id/textView3"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true" />
+<<<<<<< HEAD
 
         <RatingBar
         android:layout_width="wrap_content"
@@ -287,6 +378,8 @@
         android:scaleX="0.5"
             android:layout_below="@+id/textView2"
             android:layout_centerHorizontal="true" />
+=======
+>>>>>>> chatactivity send
     </RelativeLayout>
 </ScrollView>
 

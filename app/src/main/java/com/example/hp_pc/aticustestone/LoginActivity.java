@@ -79,7 +79,10 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
                         try {
                             JSONObject obj = new JSONObject(response);
                             if(obj.getString("error")=="false") {
+<<<<<<< HEAD
                                 storeEmail(enteremaillogin.getText().toString().trim());
+=======
+>>>>>>> chatactivity send
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }else if (obj.getString("error")=="true"){
                                 Toast.makeText(LoginActivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
