@@ -127,11 +127,15 @@ public class ChatsActivity extends AppCompatActivity {
                 params.put("title", "title");
                 params.put("message", message);
 
+                Log.d(" SEND :: \nto : " + to_userid, "from :" + selfid);
+
                 return params;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+
+        Log.d("VOLLEY", stringRequest + "");
     }
 
 //    public void parse(String response, boolean update, int self_or_rec){
@@ -347,9 +351,36 @@ public class ChatsActivity extends AppCompatActivity {
                         res2 = response;
                         f2[0] = true;
 
-                        if (f1[0] && f2[0]) {
-                            parsev2(res, res2);
-                            Log.d("ok", "ok2");
+
+                        Log.d("RES2 ", res2 + "");
+
+                        try {
+                            JSONObject err = new JSONObject(res2);
+                            boolean is_err = err.getBoolean("error");
+
+                            if (is_err) {
+                                res2 = "{\n" +
+                                        "  \"error\": false,\n" +
+                                        "  \"messages\": [\n" +
+                                        "    {\n" +
+                                        "      \"message\": \"Conversation initiated : \",\n" +
+                                        "      \"msgid\": 0,\n" +
+                                        "      \"time\": \"2017-01-01 01:01:01\"\n" +
+                                        "    }\n" +
+                                        "  ]\n" +
+                                        "}";
+
+                                parsev2(res, res2);
+
+                            }else {
+                                if (f1[0] && f2[0]) {
+                                    parsev2(res, res2);
+                                    Log.d("ok", "ok2");
+                                }
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
                     }
                 },
@@ -366,6 +397,8 @@ public class ChatsActivity extends AppCompatActivity {
 
                 params.put("selfid", to_userid);
                 params.put("reciever", selfid);
+
+                Log.d("to : " + to_userid, "from :" + selfid);
 
                 return params;
             }
@@ -397,6 +430,8 @@ public class ChatsActivity extends AppCompatActivity {
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONArray("messages");
 
+            temp1.clear();
+
             for (int i = 0; i < jsonArray.length(); ++i){
 
                 JSONObject buffer = jsonArray.getJSONObject(i);
@@ -416,6 +451,8 @@ public class ChatsActivity extends AppCompatActivity {
 
             JSONObject jsonObject2 = new JSONObject(response_2);
             JSONArray jsonArray2 = jsonObject2.getJSONArray("messages");
+
+            temp2.clear();
 
             for (int i = 0; i < jsonArray2.length(); ++i){
                 JSONObject buffer = jsonArray2.getJSONObject(i);
@@ -460,19 +497,20 @@ public class ChatsActivity extends AppCompatActivity {
                 }
             });
 
-            for (int i = 0; i < temp.size() - 1; ++i)
-                for (int j = 0; j < ((temp.size() - 1) - i); ++j){
-//                    if (temp.get(j).msg_id > temp.get(j+1).msg_id){
-//                        buf = temp.get(j);
-//                        temp.remove(j);
-//                        temp.add(j, temp.get(j+1));
-//                        temp.remove(j+1);
-//                        temp.add(j+1, buf);
+//            for (int i = 0; i < temp.size() - 1; ++i)
+//                for (int j = 0; j < ((temp.size() - 1) - i); ++j){
+////                    if (temp.get(j).msg_id > temp.get(j+1).msg_id){
+////                        buf = temp.get(j);
+////                        temp.remove(j);
+////                        temp.add(j, temp.get(j+1));
+////                        temp.remove(j+1);
+////                        temp.add(j+1, buf);
+////
+////                    }
 //
-//                    }
+//                }
 
-                }
-
+            messages.clear();
             for (int i = 0; i < temp.size(); ++i){
                 messages.add(temp.get(i));
                 adapter = new ChatsAdapter(this, messages, selfid);
