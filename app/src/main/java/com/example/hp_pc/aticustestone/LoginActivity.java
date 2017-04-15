@@ -80,6 +80,7 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
                             JSONObject obj = new JSONObject(response);
                             if(obj.getString("error")=="false") {
                                 storeEmail(enteremaillogin.getText().toString().trim());
+                                storeUser(obj.getString("id"));
                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
                             }else if (obj.getString("error")=="true"){
                                 Toast.makeText(LoginActivity.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
@@ -95,7 +96,8 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
                         progressDialog.dismiss();
                         Toast.makeText(LoginActivity.this, error.getMessage(), Toast.LENGTH_LONG).show();
                     }
-                }) {
+                })
+        {
 
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
@@ -115,6 +117,10 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
         SharedPrefManager.getInstance(getApplicationContext()).saveEmail(email);
     }
 
+    public void storeUser(String userid) {
+        SharedPrefManager.getInstance(getApplicationContext()).saveUserid(userid);
+    }
+
     @Override
     public void onClick(View v) {
         if(v==fabtwo ) {
@@ -123,6 +129,5 @@ public class LoginActivity extends AppCompatActivity  implements View.OnClickLis
         } else if (v==registerlink) {
             startActivity(new Intent(this, Testactivity.class));
         }
-
     }
 }
